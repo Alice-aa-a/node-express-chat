@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const sMessage = require('./models/message');
-const socketIo = require('socket.io');
+// const socketIo = require('socket.io');
 
 // export one function that gets called once as the server is being initialized
 module.exports = function (app, server) {
@@ -24,7 +24,7 @@ module.exports = function (app, server) {
 
     const io = require('socket.io')(server, {
         cors: {
-            origin: "http://127.0.0.1:5000",
+            origin: "http://127.0.0.1:5500",
             methods: ["GET", "POST"]
         }
     })

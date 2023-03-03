@@ -450,6 +450,11 @@ ul.tabs-container {
   padding: 8px;
   background: #445166;
 }
+.my-username {
+  height: 29px;
+  padding: 8px;
+  background: #445166;
+}
 .my-account > .image {
   width: 30px;
   height: 30px;
