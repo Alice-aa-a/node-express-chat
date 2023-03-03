@@ -1,6 +1,7 @@
 module.exports = function (io) {
 
   io.on('connection', (socket) => {
+    // Affichage du client qui vient de se connecter
     console.log(`Connecté au client ${socket.id}`)
     io.emit('notification', { type: 'new_user', data: socket.id });
 
