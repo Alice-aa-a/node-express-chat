@@ -21,12 +21,12 @@
             userid = id;
         }
 
+    let users = [];
 
-    // fetch(`${server}/test`).then((res) => {
-    //     return res.json()
-    // }).then((data) => {
-    //     console.log(data);
-    // })
+    socket.on('get_users', (data) => {
+        console.log('Message depuis le seveur:', data);
+    })
+
 
     let send_button = document.getElementById('sendBtn');
     let input_message = document.getElementById('inputMsg');
@@ -37,17 +37,14 @@
         let date = new Date;
         let date_string =`${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`
 
-
-
        function SendMessage()
        {    
         let input_value = input_message.value;
 
-                    // socket.emit('message', userid);
-
                     socket.emit('message', { message: input_value, userid: userid, date: date_string });
                     
                     console.log(input_value);
+                    input_message.value = "";
 
        }
         
